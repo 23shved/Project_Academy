@@ -36,16 +36,23 @@ public class User {
 	@Column
 	private boolean active;
 
-	@ElementCollection(targetClass = UserRole.class, fetch = FetchType.EAGER)
-	@CollectionTable(name = "access_level", joinColumns = @JoinColumn(name = "user_id"))
+
 	@Enumerated(EnumType.STRING)
-	private Set<UserRole> userRoles;
+	private UserRole userRoles;
 
 	
 	public User() {	}
-
+	public User(User user) {
+		this.id = user.id;
+		this.firstName = user.firstName;
+		this.lastName = user.lastName;
+		this.email = user.email;
+		this.password = user.password;
+		this.active = user.active;
+		this.userRoles = user.userRoles;
+	}
 	public User(String firstName, String lastName, String email, String password, boolean active,
-			Set<UserRole> userRoles) {
+			UserRole userRoles) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -102,11 +109,11 @@ public class User {
 		this.active = active;
 	}
 
-	public Set<UserRole> getUserRole() {
+	public UserRole getUserRoles() {
 		return userRoles;
 	}
 
-	public void setAccessLevels(Set<UserRole> userRoles) {
+	public void setAccessLevels(UserRole userRoles) {
 		this.userRoles = userRoles;
 	}
 
@@ -173,4 +180,5 @@ public class User {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", password=" + password + ", active=" + active + ", userRoles=" + userRoles + "]";
 	}
+
 }
