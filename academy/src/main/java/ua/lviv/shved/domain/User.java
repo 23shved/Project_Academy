@@ -23,7 +23,6 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
 	private Integer id;
 	@Column
 	private String firstName;
@@ -109,7 +108,7 @@ public class User {
 		this.active = active;
 	}
 
-	public UserRole getUserRoles() {
+	public UserRole getRole() {
 		return userRoles;
 	}
 

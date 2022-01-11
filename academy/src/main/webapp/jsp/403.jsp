@@ -10,7 +10,7 @@
 
 	<div>
 		<div>
-			<h3>You have no permission</h3>
+			<h3>You have no permission my friend</h3>
 		</div>
 		
 		<form action="/logout" method ="post">

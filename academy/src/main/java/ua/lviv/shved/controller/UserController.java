@@ -52,6 +52,9 @@ public class UserController {
     public String welcome(Model model) {
         return "home";
     }
-    
+    @RequestMapping(value ="/applyForm", method = RequestMethod.GET)
+    public String createPeriodical() {
+    	return "applyForm";
+    }  
     
 }
