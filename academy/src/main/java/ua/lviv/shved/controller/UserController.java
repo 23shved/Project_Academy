@@ -47,7 +47,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-
+        userService.save(userForm);
         return "redirect:/home";
     }
 
