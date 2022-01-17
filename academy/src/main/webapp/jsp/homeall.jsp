@@ -1,14 +1,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="security"
-	uri="http://www.springframework.org/security/tags"%>
-
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="https://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html>
 <title>Home page</title>
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -47,12 +42,9 @@ html, body, h1, h2, h3, h4, h5 {
 		<br>
 		<div class="w3-container w3-row">
 			<div class="w3-col s4">
-		<img src="data:image/jpg;base64/${session.user.encodedImage}.jpg"
-					alt="lmm" style="width: 100%">
+			<%-- 	<img src="data:image/jpg;base64, ${userImage.encodedImage}"
+					alt="lmm" style="width: 100%"> --%>
 			</div>
-			<div class="navbar-nav nav-item" sec:authorize="isAuthenticated()">
-
-		</div>
 			<div class="w3-col s8 w3-bar">
 				<span>Welcome, <strong>${pageContext.request.userPrincipal.name}</strong></span><br>
 				<a href="#" class="w3-bar-item w3-button"><i
@@ -61,15 +53,7 @@ html, body, h1, h2, h3, h4, h5 {
 					href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
 			</div>
 		</div>
-
-		<br>
-		<br> <%-- <span
-			th:text="${#authentication.getPrincipal().getUsername()}"></span> <span
-			th:text="${#authentication.getPrincipal().authorities}"></span> <br>
-		<br>
-	User: <security:authentication property="principal.username"/> <br><br>
-	Role: <security:authentication property="principal.authorities"/>
-		<hr> --%>
+		<hr>
 		<div class="w3-container">
 
 			<h5>Dashboard</h5>
@@ -174,18 +158,14 @@ html, body, h1, h2, h3, h4, h5 {
 
 			<div class="w3-container">
 				<c:if test="${not empty userImage}">
-					<c:forEach items="${userImage}" var="currentuserImage">
 
 						<div class="w3-card-4" style="width: 20%; margin: 2%">
-							<img
-								src="data:image/jpg;base64, ${currentuserImage.encodedImage}"
+<img
+								src="data:image/jpg;base64, ${userImage.encodedImage}"
 								alt="Picture" style="width: 100%">
-
-
-
 						</div>
 
-					</c:forEach>
+			
 
 				</c:if>
 				<c:if test="${not empty enrollments}">
@@ -232,38 +212,8 @@ html, body, h1, h2, h3, h4, h5 {
 						value="${_csrf.token}" />
 				</form:form>
 			</div>
-			<div class="w3-container">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Faculty</th>
-							<th>Speciality</th>
-							<th>AverageZNO</th>
-							<th>Image</th>
-				<!-- 			<th>Purchase Date</th>
-							 -->
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="currentEnrollments" items="${enrollments}">
-							<tr>
-								<td>${currentEnrollments.id}</td>
-								<td>${currentEnrollments.faculty}</td>
-								<td>${currentEnrollments.speciality}</td>
-								<td>${currentEnrollments.averageZNO}</td>
-								
-					<%-- 			<td>${bucket.purchaseDate}</td>
-								--%>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-
-</div>
 		</div>
 
-</div>
 
 
 		<div class="w3-panel">

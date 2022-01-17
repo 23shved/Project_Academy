@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 @Table(name = "enrollment")
 public class Enrollment {
@@ -42,13 +44,17 @@ public class Enrollment {
 
 
 	public Enrollment() {}
-	
-	public Enrollment(String faculty, String speciality, Double mathZNO,  Double englishZNO, Double internalTest) {
+	public Enrollment(Integer id) {
+		
+	this.id = id;
+	}
+	public Enrollment(String faculty, String speciality, Double mathZNO,  Double englishZNO, Double internalTest, MultipartFile file) {
 		this.faculty = faculty;
 		this.speciality = speciality;
 		this.mathZNO = mathZNO;
 		this.englishZNO = englishZNO;
 		this.internalTest = internalTest;
+
 	}
 
 	public void calculateAverage() {

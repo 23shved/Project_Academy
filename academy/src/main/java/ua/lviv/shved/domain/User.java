@@ -1,20 +1,15 @@
 package ua.lviv.shved.domain;
 
-import java.util.Set;
-
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -34,13 +29,25 @@ public class User {
 	private String password;
 	@Column
 	private boolean active;
+	@Lob 
+	private String encodedImage;
+	
 
+	public UserRole getUserRoles() {
+		return userRoles;
+	}
+	public void setUserRoles(UserRole userRoles) {
+		this.userRoles = userRoles;
+	}
 
 	@Enumerated(EnumType.STRING)
 	private UserRole userRoles;
 
 	
 	public User() {	}
+	public User(Integer id) {	
+		this.id = id;
+	}
 	public User(User user) {
 		this.id = user.id;
 		this.firstName = user.firstName;
@@ -72,6 +79,12 @@ public class User {
 		return firstName;
 	}
 
+	public String getEncodedImage() {
+		return encodedImage;
+	}
+	public void setEncodedImage(String encodedImage) {
+		this.encodedImage = encodedImage;
+	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

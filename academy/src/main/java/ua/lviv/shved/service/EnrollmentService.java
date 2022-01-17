@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ua.lviv.shved.dao.EnrollmentRepository;
 import ua.lviv.shved.domain.Enrollment;
+import ua.lviv.shved.domain.User;
 
 @Service
 public class EnrollmentService {
@@ -18,8 +19,13 @@ public class EnrollmentService {
 		return enrollmentRepository.save(enrollment);
 	}
 	
-	public List<Enrollment> getAllPeriodicals(){
+	public List<Enrollment> getAllEnrollments(){
 		return enrollmentRepository.findAll();
 	}
+	public void delete(Enrollment enrollment) {
+		enrollmentRepository.delete(enrollment);
+	}
+	
+	
 
 }
