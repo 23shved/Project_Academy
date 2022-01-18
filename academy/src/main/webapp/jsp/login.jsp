@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%> 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -25,33 +27,63 @@
 
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var selItem = localStorage.getItem("locales");
+		$('#locales').val(selItem ? selItem : 'en');
+		$("#locales").change(function() {
+			var selectedOption = $('#locales').val();
+			if (selectedOption) {
+				window.location.replace('?lang=' + selectedOption);
+				localStorage.setItem("locales", selectedOption);
+			}
+		});
+	});
+</script>
+
 </head>
 
 <body>
+
 	<div class="wrapper fadeInDown">
 		<div id="formContent">
 			<div class="fadeIn first">
-				<img src="https://tickikids.ams3.cdn.digitaloceanspaces.com/z1.cache/gallery/organizations/3364/icon_social_5cbef4ec4d1680.85526827.jpg"
+				<img
+					src="https://s.dou.ua/img/static/companies/logo_WdA3dVW.png"
 					id="icon" alt="Login icon" />
 			</div>
 			<form method="POST" action="${contextPath}/login" class="form-signin">
 				<div class="form-group ${error != null ? 'has-error' : ''}">
 					<span>${message}</span> <input name="email" type="text"
-						placeholder="Email" id="login" class="fadeIn second" />
-					<input name="password" type="password" placeholder="Password"
-						id="password" class="fadeIn third" /> <span>${error}</span>
-					<input type="hidden" name="${_csrf.parameterName}"
-						value="${_csrf.token}" />
-						 <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+						placeholder="<spring:message code="login.email"/>" id="login" class="fadeIn second" /> <input
+						name="password" type="password" placeholder="<spring:message code="login.password"/>"
+						id="password" class="fadeIn third" /> <span>${error}</span> <input
+						type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+						In</button>
 
 				</div>
 
 			</form>
 			<div id="formFooter">
-			            <h4 class="underlineHover"><a href="${contextPath}/registration">Create an account</a></h4>
-						</div>
+				<h4 class="underlineHover">
+					<a href="${contextPath}/registration"><spring:message code='login.create_account'/></a>
+				</h4>
+			</div>
 		</div>
-
+<div id="formFooter">
+		<fieldset>
+				<label> <spring:message code="login.choose_lang"/>		
+				</label>
+				<select id = "locales">
+				<option value = "en">English
+				</option>
+				<option value = "ua">Ukrainian
+				</option>
+				</select>
+		</fieldset>
+	</div> 
 	</div>
 
 
