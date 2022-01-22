@@ -34,6 +34,11 @@ public class EnrollmentService {
 
 		enrollmentRepository.delete(enrollment);
 	}
+
+	public Enrollment findById(Integer id) {
+		logger.info("Get enrollment by id: " + id);
+		return enrollmentRepository.findById(id).get();
+	}
 	
 	
 
