@@ -259,7 +259,7 @@ html, body, h1, h2, h3, h4, h5 {
 					</tbody>
 				</table>
 
-</div>
+
 		</div>
 
 </div>
@@ -267,11 +267,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<div class="w3-panel">
 			<div class="w3-row-padding" style="margin: 0 -16px">
-				<div class="w3-third">
-					<h5>Regions</h5>
-					<img src="/w3images/region.jpg" style="width: 100%"
-						alt="Google Regional Map">
-				</div>
+
 				<div class="w3-twothird">
 					<h5>Feeds</h5>
 					<table class="w3-table w3-striped w3-white">
@@ -450,7 +446,10 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<!-- Footer -->
 		<footer class="w3-container w3-padding-16 w3-light-grey">
-			<h4>FOOTER</h4>
+			  <h4>LOGOS IT ACADEMY</h4>
+
+  <h6>Best University</h6>
+  			  <h6>Join us</h6>
 			<p>
 				Powered by <a href="https://www.w3schools.com/w3css/default.asp"
 					target="_blank">w3.css</a>
@@ -458,8 +457,8 @@ html, body, h1, h2, h3, h4, h5 {
 		</footer>
 
 		<!-- End page content -->
-	</div>
 
+	</div>
 	<script>
 		// Get the Sidebar
 		var mySidebar = document.getElementById("mySidebar");

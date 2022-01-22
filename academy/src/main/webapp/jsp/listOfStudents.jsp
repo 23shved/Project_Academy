@@ -90,37 +90,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> Apply for some University</b></h5>
+    <h5><b><i class="fa fa-dashboard"></i> Rating</b></h5>
   </header>
 
 
 <div style="margin-left: 10%">
 			<div class="w3-container w3-teal">
-				<h1>Enter data</h1>
+				<h1>University rating for future students</h1>
 			</div>
 			<div class="w3-container">
-
-			<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Faculty</th>
-							<th>Speciality</th>
-							<th>Mark</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="applyForm" items="${applyForm}">
-							<tr>
-								<td>${applyForm.id}</td>
-								<td>${applyForm.faculty}</td>
-								<td>${applyForm.speciality}</td>
-								<td>${applyForm.enrollment}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-
 
 			</div>
 
@@ -128,7 +106,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>FOOTER</h4>
+  			  <h4>LOGOS IT ACADEMY</h4>
+
+  			  <h6>Join us</h6>
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   </footer>
 

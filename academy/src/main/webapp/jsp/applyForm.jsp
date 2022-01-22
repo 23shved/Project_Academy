@@ -107,14 +107,14 @@ html, body, h1, h2, h3, h4, h5 {
 		<!-- Header -->
 		<header class="w3-container" style="padding-top: 22px">
 			<h5>
-				<b><i class="fa fa-dashboard"></i> Apply for some University</b>
+				<b><i class="fa fa-dashboard"></i> Apply for our University</b>
 			</h5>
 		</header>
 
 
 		<div style="margin-left: 10%">
 			<div class="w3-container w3-teal">
-				<h1>Enter data</h1>
+				<h1>Enter your information to become our student: </h1>
 			</div>
 			<div class="w3-container">
 
@@ -160,7 +160,9 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<!-- Footer -->
 		<footer class="w3-container w3-padding-16 w3-light-grey">
-			<h4>FOOTER</h4>
+			  <h4>LOGOS IT ACADEMY</h4>
+  <h2>Best University</h2>
+  			  <h2>Join us</h2>
 			<p>
 				Powered by <a href="https://www.w3schools.com/w3css/default.asp"
 					target="_blank">w3.css</a>
