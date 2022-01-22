@@ -59,7 +59,7 @@
 				<spring:bind path="firstName">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
 						<form:input type="text" path="firstName" class="form-control"
-							placeholder="<spring:message code="registration.firts_name"/>" autofocus="true"></form:input>
+							placeholder="First name" autofocus="true"></form:input>
 						<form:errors path="firstName"></form:errors>
 					</div>
 				</spring:bind>
@@ -67,7 +67,7 @@
 				<spring:bind path="lastName">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
 						<form:input type="text" path="lastName" class="form-control"
-							placeholder="<spring:message code="registration.last_name"/>" autofocus="true"></form:input>
+							placeholder="Last name" autofocus="true"></form:input>
 						<form:errors path="lastName"></form:errors>
 					</div>
 				</spring:bind>
@@ -76,15 +76,22 @@
 				<spring:bind path="email">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
 						<form:input type="text" path="email" class="form-control"
-							placeholder="<spring:message code="login.email"/>" autofocus="true"></form:input>
+							placeholder="Email" autofocus="true"></form:input>
 						<form:errors path="email"></form:errors>
 					</div>
 				</spring:bind>
 
 				<spring:bind path="password">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
+						
+						
+						
 						<form:input type="password" path="password" class="form-control"
-							placeholder="<spring:message code="login.password"/>"></form:input>
+							placeholder="Password">
+							</form:input>
+							
+							
+							
 						<form:errors path="password"></form:errors>
 					</div>
 				</spring:bind>
